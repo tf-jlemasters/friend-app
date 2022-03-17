@@ -1,0 +1,31 @@
+<h1>Friends List</h1>
+<table class="table table-dark table_striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Twitter</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <% @friends.each do |friend| %>
+    <tr class="table-light">
+      <!-- the friend.first_name means accessing first_name attrib from friend table. complete 
+      reference about the table attribs can be found at schema.rb file
+      -->
+      <td><%= friend.first_name %></td>
+      <td><%= friend.last_name %></td>
+      <td><%= friend.email %></td>
+      <td><%= friend.phone %></td>
+      <td><%= friend.twitter %></td>
+      <td><%= link_to "Show this friend", friend %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New friend", new_friend_path, class:"btn btn-secondary"%>

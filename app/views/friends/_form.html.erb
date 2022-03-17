@@ -1,0 +1,45 @@
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <!-- To remove or to not display the form label, we can delete "=" sign 
+  or remove the code within tag
+  -->
+  <div class="mb-3">
+
+    <%= form.text_field :first_name, placeholder:"First Name" %>
+  </div>
+
+  <div class="mb-3">
+
+    <%= form.text_field :last_name, placeholder:"Last Name"%>
+  </div>
+
+  <div class="mb-3">
+ 
+    <%= form.text_field :email, placeholder:"Email"%>
+  </div>
+
+  <div class="mb-3">
+
+    <%= form.text_field :phone, placeholder:"Phone"%>
+  </div>
+
+  <div class="mb-3">
+
+    <%= form.text_field :twitter, placeholder:"Twitter " %>
+  </div>
+  <br/>
+  <div>
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>
