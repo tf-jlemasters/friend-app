@@ -1,35 +1,35 @@
-<h1>Friends List</h1>
-<table class="table table-dark table_striped table-bordered table-hover">
-  <thead>
+<% if user_signed_in? %>
+  <h1>Friends List</h1>
+    <table class="table table-dark table_striped table-bordered table-hover">
+      <thead class="thead-dark">
     <tr>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Phone Number</th>
-      <th scope="col">Twitter</th>
-      <th scope="col">User ID </th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  
-  <% @friends.each do |friend| %>
-    <% if friend.user == current_user %>
-    <tr class="table-light">
-      <!-- the friend.first_name means accessing first_name attrib from friend table. complete 
-      reference about the table attribs can be found at schema.rb file
-      -->
-      <td><%= friend.first_name %></td>
-      <td><%= friend.last_name %></td>
-      <td><%= friend.email %></td>
-      <td><%= friend.phone %></td>
-      <td><%= friend.twitter %></td>
-      <td><%= friend.user_id %></td>
-<td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
-    </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Twitter</th>
+      <th> </th>
+      </tr>
+      </thead>
+      <tbody>
+      
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <tr class="table-light">
+            <td>
+              <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+                </td>
+                <td><%= friend.email %></td>
+                <td><%= friend.phone %></td>
+                <td><%= friend.twitter %></td>         
+                <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+              </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
 
 <%= link_to "New friend", new_friend_path, class:"btn btn-secondary"%>
+  <% else %>
+    <h1> Hello World! </h1>
+      Welcome to my first Rails app, a friend list application. Please sign up and log in to use the project!
+<% end %>
