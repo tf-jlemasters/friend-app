@@ -7,12 +7,14 @@
       <th scope="col">Email</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Twitter</th>
+      <th scope="col">User ID </th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
   
   <% @friends.each do |friend| %>
+    <% if friend.user == current_user %>
     <tr class="table-light">
       <!-- the friend.first_name means accessing first_name attrib from friend table. complete 
       reference about the table attribs can be found at schema.rb file
@@ -22,8 +24,10 @@
       <td><%= friend.email %></td>
       <td><%= friend.phone %></td>
       <td><%= friend.twitter %></td>
-      <td><%= link_to "Show this friend", friend %></td>
+      <td><%= friend.user_id %></td>
+<td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
     </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
