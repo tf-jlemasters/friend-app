@@ -1,6 +1,6 @@
 # **Friends List App**
 ## Description 
-A friends list application where you can create, update, view, and delete friends to and from the database.
+A friends list application where you can create, update, view, and delete friends to and from the database. Utilizes current user with devise, must log in to add, view, and delete from the friends list.
 ## Table of contents
 - [Description](#Description)
 - [Installation](#Installation)
@@ -8,7 +8,7 @@ A friends list application where you can create, update, view, and delete friend
 - [Repository Link](#Repository)
 - [GitHub Info](#GitHub) 
 ## Installation
-Fork repository, and open the project in your terminal. Install necessary gems and enter "rails s" to begin the server
+Fork repository, and open the project in your terminal. Install necessary gems and enter "rails s" in your console to begin the server
 ## Contributors
 Jackson LeMasters
 ## Repository
