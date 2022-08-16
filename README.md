@@ -14,6 +14,6 @@ Jackson LeMasters
 ## Repository
 - [Project Repo](github.com/tf-jlemasters/friend-app)
 ## GitHub
-![Image of me](https://avatars.githubusercontent.com/u/82251556?v=4)
+![Image of me](https://avatars.githubusercontent.com/u/101416043?v=4)
 - Jackson LeMasters
 - [GitHub Profile](https://github.com/tf-jlemasters)
